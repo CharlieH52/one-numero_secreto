@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Adivina el número</title>
+</head>
+<body>
+    <div class="back-1"></div>
+    <div class="main-frame">
+        <header class="main-menu">
+            <div class="web-title">
+                <h1>Encuentra el número</h1>
+            </div>
+            <div class="social-media">
+                <a href="https://github.com/CharlieH52" target="_blank">
+                    <div class="social-link">
+                        <p>Github</p>
+                        <img class="icons" src="./img/social/github-icon-2.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/charliechan-dev" target="_blank">
+                    <div class="social-link">
+                        <p>Linkedin</p>
+                        <img class="icons" src="./img/social/linkedin-icon-2.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </header>
+        <main>
+            <div class="game-box">
+                <div class="game-frame">
+                    <header class="game-status">
+                        <div class="game-trys">
+                            <h2 id="tryTag">0</h2>
+                        </div>
+                        <div class="game-instructions">
+                            <p></p>
+                        </div>
+                        <div class="game-status-text">
+                            <p></p>
+                        </div>
+                    </header>
+                    <main class="game-system">
+                        <section class="game-inputs">
+                            <button onclick="minus()" class="control-buttons">-</button>
+                            <input type="number" min="1" max="10" class="field-input" id="inpNumber" value="1" disabled>
+                            <button onclick="plus()" class="control-buttons">+</button>
+                        </section>
+                        <section class="game-controls">
+                            <div class="control-buttons">
+                                <button class="buttons big-buttons" id="playButton">Jugar</button>
+                                <button class="buttons big-buttons" id="resetButton" disabled>Reiniciar</button>
+                            </div>
+                        </section>
+                        <section class="game-levels">
+                            <div class="config-buttons">
+                                <button class="buttons small-buttons active" onclick="easy_stage()" id="easy">Facil</button>
+                                <button class="buttons small-buttons" onclick="medium_stage()" id="medium">Medio</button>
+                                <button class="buttons small-buttons" onclick="hard_stage()" id="hard">Dificil</button>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </div>
+        </main>
+        <footer class="credits">
+            <p>Realizado durante el bootcamp Oracle Next Generation por Charlie Chan.</p>
+        </footer>
+    </div>
+    <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+:root {
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-primary: #1875E8;
+    --color-primary-light: #5CA4F0;
+    --color-primary-dark: #104BA0;
+    --color-disabled: gray; 
+    --background-grad: linear-gradient(var(--color-primary) 0%, var(--color-primary-dark) 20%, var(--color-black) 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--color-white);
+    height: 100dvh;
+    width: 100dvw;
+    font-family: sans-serif;
+    background: var(--background-grad);
+}
+
+.back-1 {
+    z-index: -1;
+    position: absolute;
+    background-image: url("img/code.png");
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    opacity: 25%;
+}
+    
+h1, h2 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.credits {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    min-height: 48px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    gap: 1rem;
+}
+
+.buttons {
+    color: var(--color-white);
+    border-radius: 16px;
+    background: var(--color-primary);
+    padding: 16px;
+    border: none;
+}
+
+.buttons:disabled {
+    background: var(--color-disabled);
+}
+
+.big-buttons {
+    font-size: 24px;
+    font-weight: bold;
+    min-width: fit-content;
+    min-width: 120px;
+    max-width: 200px;
+}
+
+.small-buttons {
+    min-width: 100px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.icons {
+    height: 32px;
+    aspect-ratio: 1 / 1;
+}
+
+.main-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 64px;
+    width: 100%;
+    padding: .5rem 2rem;
+    background-color: #041832;
+
+    & .web-title {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    & .social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        & a {
+            height: 32px;
+        }
+    }
+}
+
+.game-box {
+    height: fit-content;
+    width: 360px;
+    margin: 4rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 24px;
+    border: 1px solid var(--color-primary-light);
+    box-shadow: 0 0 20px 0px var(--color-primary);
+    background-image: url("img/Ruido.png");
+    background-size: 100% 100%;
+
+    & .game-frame {
+        display: flex;
+        flex-direction: column;
+        padding: .5rem;
+        gap: 1rem;
+        height: 100%;
+    }
+}
+
+.game-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .game-trys {
+        display: flex;
+        height: fit-content;
+        
+        & h2 {
+            font-size: 12rem;
+            text-shadow: 0 0 20px var(--color-primary-light);
+        }
+    }
+
+    & .game-instructions {
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    & .game-status-text {
+        text-align: center;
+        font-size: 32px;
+    }
+}
+
+.game-system {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem;
+
+    & .game-inputs {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        & .field-input {
+            width: 128px;
+            height: 64px;
+            border-radius: 8px;
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            color: var(--color-primary);
+            border: none;
+        }
+
+        & .field-input:disabled {
+            opacity: 100%;
+            background-color: var(--color-white);
+        }
+
+        & .control-buttons {
+            color: var(--color-white);
+            height: 64px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            font-size: 42px;
+            font-weight: 900;
+            text-align: center;
+            background-color: var(--color-primary);
+            border: none;
+        }
+    }
+
+    & .game-controls {
+        & .control-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    & .game-levels {
+        & .config-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+    }
+}
+
+@media(width <= 720px) {
+
+    .main-menu {
+        height: fit-content;
+        flex-direction: column;
+    }
+}
+
+@media(width > 480px) {
+    .game-box {
+        width: fit-content;
+    
+        & .game-frame {
+            padding: 2rem;
+        }
+        
+    }
+}
